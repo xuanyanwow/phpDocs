@@ -1,0 +1,24 @@
+{
+    "name": "siam/php-docs",
+    "description": "php",
+    "type": "l",
+    "require": {
+        "easyswoole/annotation": "^1.0",
+        "easyswoole/parsedown": "^1.0",
+        "easyswoole/utility": "^1.0"
+    },
+    "license": "Apache",
+    "authors": [
+        {
+            "name": "宣言",
+            "email": "59419979@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Siam\\Docs\\":"src",
+            "Siam\\Tests\\":"tests"
+        }
+    }
+}
