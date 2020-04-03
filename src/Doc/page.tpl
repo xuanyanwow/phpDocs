@@ -13,7 +13,7 @@
         .fa-angle-right::before {
             padding-right:0.3rem
         }
-        .fa-angle-down::before {
+        .fa-angle-down::before {h
             padding-right:0.3rem
         }
 
@@ -325,7 +325,7 @@
             font-size: 0.8em;
             font-weight: bold;
             color: #3f5163;
-            display: none;
+            /*display: none;*/
         }
         .container .sideBar > ul li > ul li {
             padding-top: 0.3rem;
@@ -632,11 +632,11 @@
         }
 
 
-        .container .mainContent .markdown-body h4 {
-            font-size: 16px;
-            border-left: 4px solid red;
-            padding-left: 20px;
-        }
+        /*.container .mainContent .markdown-body h4 {*/
+            /*font-size: 16px;*/
+            /*border-left: 4px solid red;*/
+            /*padding-left: 20px;*/
+        /*}*/
         .container .mainContent .markdown-body h5 {
             font-size: 14px;
         }
@@ -832,6 +832,9 @@
         .container .mainContent .markdown-body h1 {
             font-size: 2em;
         }
+        .one-api{
+            min-height: calc(100vh);
+        }
         .container .mainContent .markdown-body h1,
         .container .mainContent .markdown-body h2 {
             border-bottom: 1px solid #eaecef;
@@ -918,7 +921,7 @@
         .container .mainContent .markdown-body img[align=left] {
             padding-right: 20px;
         }
-        .container .mainContent .markdown-body p code {
+        span code {
 
             border-radius: 2px;
             color: #e96900;
@@ -1166,7 +1169,7 @@
     $(function () {
         $.each($('.sideBar li:has(li)'),function(){
             // var data = $(this).append( 'asd');
-            $(this).attr('isOpen',0).addClass('fa fa-angle-right');
+            $(this).attr('isOpen',1).addClass('fa fa-angle-down');
         });
 
         $('.sideBar li:has(ul)').click(function(event){
