@@ -7,6 +7,9 @@
         "easyswoole/parsedown": "^1.0",
         "easyswoole/utility": "^1.0"
     },
+    "bin": [
+        "bin/siam-docs"
+    ],
     "license": "Apache",
     "authors": [
         {
