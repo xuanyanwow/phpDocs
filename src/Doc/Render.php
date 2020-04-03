@@ -44,9 +44,9 @@ class Render
         $tpl .= "#### <span class='requestMethod'>Method : ```{$method}```</span> \n\n";
         $tpl .= "#### Url : <span>```{$api->path}```</span>\n\n";
 
-        $tpl .= "### 请求 \n\n";
 
         if(isset($methodAnnotation['Param'])){
+            $tpl .= "### 请求 \n\n";
             $tpl .= "#### 请求字段 \n\n";
             $tpl .= "|字段|类型|描述|验证规则|\n";
             $tpl .= "|----|----|----|----|\n";
@@ -60,16 +60,15 @@ class Render
 
         if(isset($methodAnnotation['ApiRequestExample'])){
             $tpl .= "#### 请求示例 \n\n";
-            $index = 1;
-            foreach ($methodAnnotation['ApiRequestExample'] as $example){
+            foreach ($methodAnnotation['ApiRequestExample'] as $index => $example){
                 $tpl .= "##### 请求示例{$index} \n\n";
                 $tpl .= "```\n{$example->getContent()}\n```\n";
             }
         }
 
-        $tpl .= "### 响应 \n\n";
 
         if(isset($methodAnnotation['ResponseParam'])){
+            $tpl .= "### 响应 \n\n";
             $tpl .= "#### 响应字段 \n\n";
             $tpl .= "|字段|类型|描述|\n";
             $tpl .= "|----|----|----|\n";
@@ -82,10 +81,10 @@ class Render
 
         if(isset($methodAnnotation['ApiSuccess'])){
             $tpl .= "#### 成功响应示例 \n\n";
-            $index = 1;
-            foreach ($methodAnnotation['ApiSuccess'] as $example){
+            foreach ($methodAnnotation['ApiSuccess'] as $index => $example){
                 $tpl .= "##### 成功响应示例{$index} \n\n";
-                $tpl .= "```\n{$example->getContent()}\n```\n";
+                // $tpl .= "```\n{$example->getContent()}\n```\n";
+                $tpl .= "<textarea>{$example->getContent()}</textarea>";
             }
         }
 

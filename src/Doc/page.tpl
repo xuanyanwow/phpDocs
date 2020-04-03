@@ -6,6 +6,8 @@
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <link href="https://cdn.bootcss.com/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/github-markdown-css/4.0.0/github-markdown.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/codemirror.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/theme/material.css" rel="stylesheet">
     <style>
         .deprecated{
             color: red;
@@ -13,7 +15,7 @@
         .fa-angle-right::before {
             padding-right:0.3rem
         }
-        .fa-angle-down::before {h
+        .fa-angle-down::before {
             padding-right:0.3rem
         }
 
@@ -531,10 +533,10 @@
         }
         .container .mainContent .markdown-body code,
         .container .mainContent .markdown-body kbd,
-        .container .mainContent .markdown-body pre {
-            font-family: monospace, monospace;
-            font-size: 1em;
-        }
+        /*.container .mainContent .markdown-body pre {*/
+            /*font-family: monospace, monospace;*/
+            /*font-size: 1em;*/
+        /*}*/
         .container .mainContent .markdown-body hr {
             box-sizing: content-box;
             height: 0;
@@ -676,7 +678,8 @@
         .container .mainContent .markdown-body code,
         .container .mainContent .markdown-body pre {
             font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
-            font-size: 12px;
+            /*font-size: 12px;*/
+            margin:0 !important;
         }
         .container .mainContent .markdown-body pre {
             margin-bottom: 0;
@@ -952,13 +955,13 @@
             word-break: normal;
         }
         .container .mainContent .markdown-body .highlight pre,
-        .container .mainContent .markdown-body pre {
-            border-radius: 3px;
-            font-size: 85%;
-            line-height: 1.45;
-            overflow: auto;
-            padding: 16px;
-        }
+        /*.container .mainContent .markdown-body pre {*/
+            /*border-radius: 3px;*/
+            /*font-size: 85%;*/
+            /*line-height: 1.45;*/
+            /*overflow: auto;*/
+            /*padding: 16px;*/
+        /*}*/
         .container .mainContent .markdown-body pre code {
             background-color: transparent;
             border: 0;
@@ -1153,6 +1156,13 @@
             margin: 0 auto;
             padding: 2rem 2.5rem;
         }
+        textarea{
+            line-height: 12px;
+        }
+        .CodeMirror-cursor{
+            height: 14px;
+            line-height: 12px;
+        }
     </style>
 </head>
 <body>
@@ -1165,6 +1175,9 @@
         <div class="right-menu" id="right-menu"></div>
     </section>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/codemirror.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/mode/javascript/javascript.js"></script>
+
 <script>
     $(function () {
         $.each($('.sideBar li:has(li)'),function(){
@@ -1186,6 +1199,12 @@
                 }
             }
         });
+
+        var json = {lineNumbers: true,mode: "text/javascript",styleActiveLine: true,theme: 'material',lineWrapping: true};
+        $("textarea").each(function(index, element){
+            CodeMirror.fromTextArea(element, json);
+        })
+
     });
 
 </script>
