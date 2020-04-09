@@ -7,7 +7,7 @@
         "easyswoole/parsedown": "^1.0",
         "easyswoole/utility": "^1.0"
     },
-    "license": "Apache",
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "宣言",
