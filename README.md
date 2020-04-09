@@ -5,7 +5,7 @@
 ## 安装
 
 ```
-composer require siam/siam-docs
+composer require siam/php-docs
 ```
 
 ## 默认使用
